@@ -1,3 +1,7 @@
+def get_Int(self):
+    return int(input())
+
+#########################################################################
 import random
 class Utility:
     def __init__(self):
@@ -138,5 +142,14 @@ class Utility:
 
 
 
+   ################################# Two D-Array ####################################
+
+   def inputArray(self, n, m):
+        arr = []
+        for i in range(0, n):
+          for j in range(0, m):
+
+           arr[i][j] = Utility().get_Int()
+        return arr
 
 
