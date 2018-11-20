@@ -3,6 +3,7 @@ def get_Int(self):
 
 #########################################################################
 import random
+import time
 class Utility:
     def __init__(self):
         pass
@@ -137,19 +138,63 @@ class Utility:
     ############################ Coupon Number ###################################
 
 
-    def getCouponNo(self, num):
+  #  def getCouponNo(self, num):
 
 
 
 
-   ################################# Two D-Array ####################################
+  ################################ Two D-Array ####################################
+  # M rows, N Cols, and M * N inputs for 2D Array.
 
-   def inputArray(self, n, m):
+    def getArray(self, n, m):
         arr = []
-        for i in range(0, n):
-          for j in range(0, m):
+        for i in range(n):
+            print("enter values:")
+            element = []
 
-           arr[i][j] = Utility().get_Int()
-        return arr
+            for j in range(m):
+             val = input(" ")
+             element.append(val)
+
+             arr.append(element)
+   #File handiling.create array.txt file.program output i.e arr will
+   #get wrote into that file.
+            file = open("array.txt", "w")
+            file.write(str(arr))
+            file.close()
+           # arr[i][j] = Utility().get_Int()
+        print(arr)
+
+
+  ############################### Sum of int ###########################################
+
+    def getSum(self,number):
+
+        s = []
+        count = 0
+
+        for i in range(0, number-2):
+            for j in range(i+1, number-1):
+                for k in range(j+1, number):
+                   if(s[i] + s[j] + s[k] == 0):
+                       print(s[i]+s[j]+s[k])
+                       count = count + 1
+
+                       if count == 0:
+                           print("triplet is not found...")
+ ############################# Stop Watch ############################################
+
+
+    # def getStart(self,startTime):
+    #     startTime=0
+    #       startTime = time.time()
+    # def getStop(self, stopTime):
+    #     stopTime=0
+    #       stopTime = time.time()
+    #
+    #  print("elapsed time is:", stopTime - startTime)
+    #
+    #
+    #
 
 
