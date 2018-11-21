@@ -167,21 +167,31 @@ class Utility:
 
 
   ############################### Sum of int ###########################################
+    def getEle(self,number):
+        store_ele = []
+        print("Enter values..")
+        for i in range(number):
+            x = int(input(" "))
+            store_ele.append(x)
+        return store_ele
+    def getSum(self,number, s):
 
-    def getSum(self,number):
-
-        s = []
         count = 0
-
+        flag = 0
+        print("Triplet is..")
         for i in range(0, number-2):
             for j in range(i+1, number-1):
                 for k in range(j+1, number):
                    if(s[i] + s[j] + s[k] == 0):
-                       print(s[i]+s[j]+s[k])
+                       print(s[i], s[j], s[k])
                        count = count + 1
+                       flag = 1
+        print("total triplet count is:", count)
 
-                       if count == 0:
-                           print("triplet is not found...")
+
+        if flag == 0:
+
+           print("triplet is not found...")
  ############################# Stop Watch ############################################
 
 
