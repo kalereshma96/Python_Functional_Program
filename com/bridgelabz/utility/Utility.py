@@ -669,7 +669,9 @@ class Utility:
 
        if choice == 1:
            Utility.getDay()
-           
+       if choice == 1:
+           Utility.getDay()
+
 
 
 
