@@ -440,13 +440,54 @@ class Utility:
     #     #     choice.getBubbleStr()
     #
     # # def getInsertionInt(self):
-    # #
-    # #
+    # def getStringElement(self, s):
+    #     newlist = []
+    #     for i in range(s):
+    #         num = int(input(""))
+    #         newlist.append(num)
+    #     return newlist
+    #
+    # def getInsertion(self, storeelement):
+    #
+    #     print(storeelement)
+    #
+    #     for i in range(1, len(storeelement)):
+    #         temp = storeelement[i]
+    #         j = i - 1
+    #
+    #         while (temp <= storeelement[j] and j >= 0):
+    #             storeelement[j + 1] = storeelement[j]
+    #             j = j - 1
+    #
+    #         storeelement[j + 1] = temp
+    #     print("in ascending order")
+    #     for i in range(0, len(storeelement)):
+    #         print(storeelement[i])
+    # # #
     # # def getInsertioStr(self):
     # #
     # #
     # # def getBubbleInt(self):
-    # #
+    # # def getIntElement(self,s):
+    #         newlist = []
+    #         for i in range(s):
+    #             num = int(input(""))
+    #             newlist.append(num)
+    #         return newlist
+    #
+    #
+    #
+    #     def getBubble(self,storeelement):
+    #
+    #         print(storeelement)
+    #         n =len(storeelement)
+    #         for i in range(len(storeelement)):
+    #             for j in range(0, n-i-1):
+    #                 if storeelement[j] > storeelement[j+1]:
+    #                   storeelement[j],storeelement[j+1]=storeelement[j+1],storeelement[j]
+    #         print("sorted array is")
+    #         for i in range(len(storeelement)):
+    #             print(storeelement[i])
     # # def getBubbleStr(self):
 
 ########################### Find Number ######################3333
@@ -503,33 +544,139 @@ class Utility:
       print(word)
 
     ###################### Insertion sort ################################
+    def getStringElement(self,s):
+        newlist=[]
+        for i in range(s):
+            num=input("")
+            newlist.append(num)
+        return newlist
 
-    def getInsertion(self,s):
+    def getInsertion(self,storeelement):
 
-    System.out.println("enter elements in strings");
-    for (int k = 0; k < s; k++) {
-        arr[k] = scanner.next();
-    }
-    int
-    n;
-    String
-    temp;
-    for (int i = 1; i < s; i++) {
-        temp = arr[i];
-    int j = i - 1;
-    while (j >= 0) {
-    if (temp.compareTo(arr[j]) > 0) {
-    break;
-    }
-    arr[j + 1] = arr[j];
-    j - -;
-    }
-    arr[j + 1] = temp;
-    System.out.println(Arrays.toString(arr));
-    }
-    return arr;
 
-}
+        print(storeelement)
+
+        for i in range(1,len(storeelement)):
+             temp = storeelement[i]
+             j =  i - 1
+
+             while (temp <= storeelement[j] and j >= 0):
+                 storeelement[j+1] = storeelement[j]
+                 j=j-1
+
+             storeelement[j + 1] = temp
+        print("in ascending order")
+        for i in range(0,len(storeelement)):
+            print(storeelement[i])
+        file = open("insertion.txt", "w")
+        file.write(str(storeelement))
+        file.close()
+        file = open("insertion.txt","r")
+        if file.mode == 'r':
+            contents = file.read()
+            print(contents)
+           # print(contents[0])
+            #print(word)
+ ########################## Bubble Sort #####################
+    def getIntElement(self,s):
+        newlist = []
+        for i in range(s):
+            num = int(input(""))
+            newlist.append(num)
+        return newlist
+
+
+
+    def getBubble(self,storeelement):
+
+        print(storeelement)
+        n =len(storeelement)
+        for i in range(len(storeelement)):
+            for j in range(0, n-i-1):
+                if storeelement[j] > storeelement[j+1]:
+                  storeelement[j],storeelement[j+1]=storeelement[j+1],storeelement[j]
+        print("sorted array is")
+        for i in range(len(storeelement)):
+            print(storeelement[i])
+        file = open("bubble.txt", "w")
+        file.write(str(storeelement))
+        file.close()
+        file = open("bubble.txt", "r")
+        if file.mode == 'r':
+                contents = file.read()
+                print(contents)
+
+######################## MERGE SORT ##############################
+
+
+    # for i in range(0, n):
+    #   for j in range(0, n):
+    #        for k in range(0, n):
+    def getMerge(self, storelement):
+        print(storelement)
+        mid = len(storelement)//2
+        #print(mid)
+
+        n = len(storelement)
+        lefthalf = storelement[:mid]
+        righthalf = storelement[mid:]
+        i = 0
+        j = 0
+        k = 0
+      #  Utility().getMerge(lefthalf)
+       # Utility().getMerge(righthalf)
+
+        while i < len(lefthalf) and j >len(righthalf):
+            if lefthalf[i] < righthalf[i]:
+                 storelement[k]=lefthalf[i]
+                 i = i+1
+            else:
+                 storelement[k]=righthalf[j]
+                 j = j+1
+            k = k+1
+        while i < len(lefthalf):
+            storelement[k]=lefthalf[i]
+            i = i+1
+            k = k+1
+        while  j <len(righthalf):
+            storelement[k]=righthalf[j]
+            j=j+1
+            k=k+1
+      #  Utility().getMerge(storelement)
+        print("merging:",storelement)
+
+   ##################### Day of week #######################
+
+   def getDay(m,d,y):
+       y0 = y − (14 − m) / 12
+       x = y0 + y0 / 4 − y0 / 100 + y0 / 400
+       m0 = m + 12 × ((14 − m) / 12) − 2
+       d0 = (d + x + 31m0 / 12) % 7
+
+       choice = 0
+       print("1.JAN")
+       print("2.FEB")
+       print("3.MAR")
+       print("4.APR")
+       print("5.MAY")
+       print("6.JUN")
+       print("7.JULY")
+       print("8.AUG")
+       print("9.SEP")
+       print("10.DEC")
+       print("11.NOV")
+       print("12.DEC")
+
+       if choice == 1:
+           Utility.getDay()
+           
+
+
+
+
+
+
+
 
 
 
