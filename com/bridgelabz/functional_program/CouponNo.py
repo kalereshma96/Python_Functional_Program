@@ -3,8 +3,8 @@
 
 from com.bridgelabz.utility.Utility import Utility
 
-utility_obj8 = Utility()
+utility_obj = Utility()
 num = int(input("Enter number"))
-num = utility_obj8.getCouponNo(num)
+num = utility_obj.getCouponNo(num)
 
 

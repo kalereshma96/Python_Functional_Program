@@ -1,9 +1,9 @@
 #take harmonic value n, Prints the Nth harmonic number: 1/1 + 1/2 + ... + 1/N
 
 from com.bridgelabz.utility.Utility import Utility
-utility_obj5 = Utility()
+utility_obj = Utility()
 number = int(input("enter number:"))
-number = utility_obj5.inputNumber(number)
+number = utility_obj.inputNumber(number)
 
 
 

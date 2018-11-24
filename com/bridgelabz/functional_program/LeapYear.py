@@ -13,6 +13,6 @@
 #     print(year, "not a leap year")
 
 from com.bridgelabz.utility.Utility import Utility
-utility_obj3 = Utility()
+utilityObj = Utility()
 year = int(input("Enter year to check if it is leap year or not:"))
-year = utility_obj3.inputYear(year)
+year = utilityObj.inputYear(year)

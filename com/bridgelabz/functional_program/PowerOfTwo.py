@@ -15,9 +15,9 @@
 # print(power, "of is", temp)
 
 from com.bridgelabz.utility.Utility import Utility
-utility_obj4 = Utility()
+utility_obj = Utility()
 power = int(input("enter power:"))
-power = utility_obj4.inputPower(power)
+power = utility_obj.inputPower(power)
 #print(power, "of is", temp)
 
 

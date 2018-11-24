@@ -32,9 +32,9 @@ from com.bridgelabz.utility.Utility import Utility
 headcount = 0
 tailcount = 0
 
-utility_obj2 = Utility()
+utility_obj = Utility()
 flip = int(input("Enter no of flip you want:"))
 print(flip)
-flip = utility_obj2.inputInt(flip)
+flip = utility_obj.inputInt(flip)
 
 

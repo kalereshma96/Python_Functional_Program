@@ -4,7 +4,7 @@
 
 from com.bridgelabz.utility.Utility import Utility
 
-utility_obj7 = Utility()
+utility_obj = Utility()
 stake = int(input("Enter stakes:"))
 #stake = utility_obj7.getInput(stake)
 goal = int(input("Enter goals:"))
@@ -14,9 +14,104 @@ NoofTimes = int(input("Enter number of times:"))
 
 
 list = []
-list = utility_obj7.getInput(stake, goal, NoofTimes)
+list = utility_obj.getInput(stake, goal, NoofTimes)
 
 print("No of wins are:", list[0])
 print("Percentage of wins:", list[1])
 print(" Percentage of loss:",list[2])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
