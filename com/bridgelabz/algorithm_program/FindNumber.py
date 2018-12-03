@@ -1,14 +1,12 @@
 
 from com.bridgelabz.utility.Utility import Utility
-
-
 utilityObj = Utility()
-num = int(input("enter number.."))
-val = 2 ** num
-lower = 0
-upper = val
-mid = (upper + lower)//2
-utilityObj.getMagicNo(val, lower, upper, mid)
+num = int(input("enter number:"))
+no = 2**num
+utilityObj.getNum(no)
+
+
+
 
 
 

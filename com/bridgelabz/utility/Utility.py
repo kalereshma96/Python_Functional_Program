@@ -65,6 +65,8 @@ class Utility:
                 print(year, "not a leap year")
 
     ######################################## power of two ############################
+    #This program takes a command-line argument N and prints a table of the powers
+    # of 2 that are less than or equal to 2^N.
 
     def inputPower(self,power):
          temp =1
@@ -168,6 +170,8 @@ class Utility:
 
 
   ############################### Sum of int ###########################################
+    #Read in N integers and counts the   number of triples that sum to exactly 0.
+
     def getEle(self,number):
         store_ele = []
         print("Enter values..")
@@ -259,6 +263,7 @@ class Utility:
            print("root 2 is:",root2)
 
     ################################# wind chill #########################3
+    #Its take two command line argument t as temperature and v as speed.
     def getWindchill(self, t, v):
         if (t > 50 or (v > 120 or v < 3)):
             print("Enter valid temperature and speed...")
@@ -291,14 +296,15 @@ class Utility:
     #################### Anagram Detection ###################################
 
     def getAnagram(self, str1, str2):
-        #flag = 0
+        # print(str1,str2)
+        # #flag = 0
         a = []
         b = []
-        str1 = " "
-        str2 = " "
+        str1 = str1.replace(" "," ")
+        str2 = str2.replace(" "," ")
         if(len(str1) == len(str2)):
             # flag=1
-            print("enter strings are anagram of each other..")
+            print(str1," and",str2,"anagram of each other..")
         else:
             #flag =0
             print("enter strings are not anagram ")
@@ -326,16 +332,16 @@ class Utility:
              no=primenum[i]
            if (no == sum):
                print(sum)
-    def getPrimeAnagram(self,primenum):
-        print("Prime anagram numbers are..")
-        for i in range(primenum):
-            for j in range(len(primenum)):
-               str1 =str1(primenum[i])
-               str2 =str2(primenum[j])
-            if(primenum[i] == 0 and primenum[j] == 0):
-                self.getAnagram(str1,str2)
-
-            print(str1,str2)
+    # def getPrimeAnagram(self,primenum):
+    #     print(primenum)
+    #     print("Prime anagram numbers are..")
+    #     for i in range(len(primenum)):
+    #         for j in range(len(primenum)):
+    #             if (primenum[i] > 0 and primenum[j] > 0):
+    #                 str1 =str(primenum[i])
+    #                 str2 =str(primenum[j])
+    #                 Utility().getAnagram(str1,str2)
+    #                 #print(str1,str2)
 
     ############################ Static methods ###############################
     # def getBinaryInt(self):
@@ -492,56 +498,74 @@ class Utility:
 
 ########################### Find Number ######################3333
 
-
-    def getMagicNo(val, lower, upper, mid):
-        num_array =[]
-        print("Your number is :",mid)
-        print("Enter yes or high or low")
-
-        no = int(input(" "))
-        num_array.append(no)
-
+    def getNum(self,no):
+        lower = 0
+        upper = no - 1
+        mid = upper + lower // 2
         count = 0
 
-        for i in range(0, val):
+        print("the range of no", lower, "-", upper)
+        print("the imagined no is:", mid)
+        number = int(input("enter 1 for high,2 for low,0 or yes"))
+        while lower <= upper:
+            if number == "1":
+                lower = mid
+                count = count + 1
+            elif number == "2":
+                upper = mid
+                count = count + 1
+            elif number == "0":
+                count = count + 1
+                print("the imagined no is", mid)
+                break
 
-
-            if( no):
-                low = mid + 1
-                count = count +1
-
-
-            elif no == num_array[mid]:
-                 print("Number found at",mid,"index position")
-
-            else:
-                 no > num_array[mid]
-                 upper = mid - 1
-                 print("2".mid,"-",upper)
-
-            print("Intermediary numbers are",low,"and",high)
-
+            if count < no:
+                mid = upper + lower // 2
+                print("your imagined no at", mid)
 
     ###################### Word From List ########################
 
-    def getWord(self,word_list):
-      #word = []
-      flag = 0
+    def getWord(self,storeelement):
+
       word=input("enter word to be search..")
-      word.append(word_list)
-
-      for word in range(word_list):
-
-
-         if flag == 0:
-            print("Word not found")
-         if flag == 1:
-           print("word found")
-      file = open("word_list.txt", "w")
-      file.write(str(word_list))
-      file.read(word)
+      for i in range(0, len(storeelement)):
+          print(storeelement[i])
+      file = open("word.txt", "w")
+      file.write(str(storeelement))
       file.close()
-      print(word)
+      file = open("word.txt", "r")
+      if file.mode == 'r':
+          contents = file.read()
+          print(contents)
+      lower = 0
+      upper = len(storeelement)- 1
+      mid = upper + lower // 2
+      x = len(storeelement)
+      lineno = word
+      for i in range(0, len(storeelement)):
+
+            if word > storeelement[mid]:
+                lower = mid +1
+            else:
+                word == storeelement[mid]
+
+                print("number found at ",mid,"index position")
+                break
+
+            if word < storeelement[mid]:
+                upper = mid -1
+
+
+            while x > 0:
+                mid = upper + lower // 2
+                x = x -1
+                break
+
+            for j in range(len(storeelement)):
+              if(word != storeelement[j]):
+                print("word not found..!!!")
+
+
 
     ###################### Insertion sort ################################
     def getStringElement(self,s):
@@ -642,39 +666,122 @@ class Utility:
             storelement[k]=righthalf[j]
             j=j+1
             k=k+1
-      #  Utility().getMerge(storelement)
+        Utility().getMerge(storelement)
         print("merging:",storelement)
 
    ##################### Day of week #######################
 
-   def getDay(m,d,y):
-       y0 = y − (14 − m) / 12
-       x = y0 + y0 / 4 − y0 / 100 + y0 / 400
-       m0 = m + 12 × ((14 − m) / 12) − 2
-       d0 = (d + x + 31m0 / 12) % 7
-
-       choice = 0
-       print("1.JAN")
-       print("2.FEB")
-       print("3.MAR")
-       print("4.APR")
-       print("5.MAY")
-       print("6.JUN")
-       print("7.JULY")
-       print("8.AUG")
-       print("9.SEP")
-       print("10.DEC")
-       print("11.NOV")
-       print("12.DEC")
-
-       if choice == 1:
-           Utility.getDay()
-       if choice == 1:
-           Utility.getDay()
+    def getDay(self,m,d,y):
 
 
+        y0 = y - (14 - m) / 12
 
+        x = y0 + y0 / 4 - y0 / 100 + y0 / 400
 
+        m0 = m + 12 * ((14 - m) / 12) - 2
+
+        d0 = (d + x + 31 * m0 / 12) % 7
+
+        return d0
+ ########################## Temperature ################################
+    def getTemp(self,temp):
+
+         choice = 0
+
+         print("Enter 1 for fahrenheit and 2 for celsius")
+         choice =int(input(" "))
+
+         if choice == 1:
+           F = (temp * 9 / 5) + 32
+           print("In fahrenheit",F)
+
+         elif choice == 2:
+           F = (temp - 32) * 5 / 9
+           print("In celsius",F)
+        # res = input(temp)
+
+       # Celsiustoahrenheit=(°C × 9/5) + 32 = °F
+       # FahrenheittoCelsius=(°F − 32) x 5/9 = °C
+
+    ######################### Monthly payment ####################
+
+    def getPrinciple(self,principle, year, rate):
+        n = 12 * year
+        R1 = rate / (12 * 100)
+        payment = (principle * R1) / (1 - (pow((1 + R1), -n)))
+        print(payment)
+    ######################### Square root ########################
+
+    def getSqrroot(self,result):
+        c = result
+        t = c
+        epsilon = 1e-15
+        while (math.fabs(t - c / t) > epsilon * t):
+            t = (c / t + t) / 2.0
+        print(t)
+    ############################ Decimal to binary #############
+    def getBinary(self, no):
+        print("binary of:",no,"is")
+        rem = 0
+        binary = 0
+        i = 1
+        while no != 0:
+            rem = no % 2
+            no = no // 2
+            binary = binary + rem * i
+            i = i * 10  # until i becomes zero
+        print(binary)
+    ####################### binary to binary #####################
+    def getToBinary(self,no):
+
+        rem = 0
+        binary = 0
+        i = 1
+        print("binary of :", no)
+        while no != 0:
+            rem = no % 2
+            no = no // 2
+            binary = binary + rem * i
+            i = i * 10  # until i becomes zero
+       # print(binary)
+
+        binary=str(binary)
+        binary=binary.zfill(8)
+        print(binary)
+        store =binary
+        #print(store)
+        n =len(str(store))
+        mid = n//2
+        mid = len(store) // 2
+        n = mid
+        nibbbleone =store[:mid]
+        nibbletwo = store[mid:]
+        print("first nibble:",nibbbleone)
+        print("second nibble:",nibbletwo)
+        print("after swapping...")
+        temp = nibbbleone
+        nibbbleone=nibbletwo
+        nibbletwo=temp
+        print(nibbbleone)
+        print(nibbletwo)
+        storeelement =nibbbleone+nibbletwo
+        print(storeelement)
+        print("decimal of:",storeelement)
+        num = int(storeelement)
+
+        #int(input(storeelement))
+        decimal = 0
+        i = 1
+        while num != 0:
+              remd = num % 2
+              decimal = decimal + remd * i
+              num = num // 10
+              i = i * 2
+        print(decimal)
+       # power = 0
+        #for i in range(len(storeelement)):
+
+    #######################Data #####################################
 
 
 
