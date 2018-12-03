@@ -1,3 +1,12 @@
+"""
+purpose   : To implement the all the operations of stack,and check
+            given expression is having balance parentheses
+@Author   : Reshma Y. Kale
+@version  : 1.0
+
+"""
+
+
 #support mathematical operations like union,
 # intersection, difference, and symmetric difference.
 #Curly braces or the set() function can be used to create sets.
